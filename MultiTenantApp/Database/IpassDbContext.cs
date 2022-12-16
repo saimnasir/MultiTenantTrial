@@ -23,12 +23,12 @@ namespace MultiTenantApp.Database
             modelBuilder
                 .Entity<Pass>()
                 .HasQueryFilter(a => a.Tenant == TenantService.Tenant)
-                //.HasData(
-                //    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Dog", Name = "Samson", Tenant = "Khalid" },
-                //    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Dog", Name = "Guinness", Tenant = "Khalid" },
-                //    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Cat", Name = "Grumpy Cat", Tenant = "Internet" },
-                //    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Cat", Name = "Mr. Bigglesworth", Tenant = "Internet" }
-                //)
+                .HasData(
+                    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Dog", Name = "Samson", Tenant = "TK1" },
+                    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Dog", Name = "Guinness", Tenant = "TK1" },
+                    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Cat", Name = "Grumpy Cat", Tenant = "TK2" },
+                    new() { Id = Guid.NewGuid().NewSequentalGuid(), Kind = "Cat", Name = "Mr. Bigglesworth", Tenant = "TK2" }
+                )
                 ;
         }
     }

@@ -31,10 +31,10 @@ namespace MultiTenantApp.Migrations
                 columns: new[] { "Id", "CreatedAt", "IsDeleted", "Kind", "Name", "Tenant", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { new Guid("5afc5d78-a7c3-89e7-629a-3a08275db903"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Dog", "Samson", "Khalid", null },
-                    { new Guid("6498e94b-8e27-09df-76eb-3a08275db903"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Cat", "Mr. Bigglesworth", "Internet", null },
-                    { new Guid("ee6b7029-03d7-517a-1e97-3a08275db903"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Dog", "Guinness", "Khalid", null },
-                    { new Guid("fa77153d-11b8-e783-ee41-3a08275db903"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Cat", "Grumpy Cat", "Internet", null }
+                    { new Guid("5afc5d78-a7c3-89e7-629a-3a08275db903"), DateTime.Now, false, "Dog", "Samson", "TK1", DateTime.Now },
+                    { new Guid("6498e94b-8e27-09df-76eb-3a08275db903"), DateTime.Now, false, "Cat", "Mr. Bigglesworth", "TK1", DateTime.Now },
+                    { new Guid("ee6b7029-03d7-517a-1e97-3a08275db903"), DateTime.Now, false, "Dog", "Guinness", "TK2", DateTime.Now },
+                    { new Guid("fa77153d-11b8-e783-ee41-3a08275db903"), DateTime.Now, false, "Cat", "Grumpy Cat", "TK2", DateTime.Now }
                 });
         }
 
