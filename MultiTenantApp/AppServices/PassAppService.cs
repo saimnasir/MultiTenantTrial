@@ -27,16 +27,6 @@ namespace MultiTenantApp.AppServices
             var all = await PassRepository.GetAllAsync(); 
             var result = Mapper.Map<List<PassDto>>(all);
             return result;
-        }
-        public async Task<List<PassDto>> GetReportAsync(DTO input)
-        {
-            if (string.IsNullOrEmpty(TenantService.Tenant?.Trim()))
-            {
-                throw new Exception("Tenant Invalid");
-            }
-            var all = await PassRepository.GetAllAsync();
-            var result = Mapper.Map<List<PassDto>>(all);
-            return result;
-        }
+        }      
     }
 }

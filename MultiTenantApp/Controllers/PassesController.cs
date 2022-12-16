@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MultiTenantApp.AppServices;
 using MultiTenantApp.Dto;
+using MultiTenantApp.Enums;
 using Patika.Framework.Shared.Controllers;
 using Patika.Framework.Shared.DTO;
 
@@ -21,12 +22,25 @@ namespace MultiTenantApp.Controllers
         public async Task<ActionResult<FinalResponseDTO<List<PassDto>>>> GetListAsync(string? tenant)
         {
             var input = new DTO
-            {  
+            {
             };
             return await WithLoggingFinalResponse(input, async () =>
             {
                 return await PassAppService.GetListAsync(input);
             });
         }
+
+        //[HttpGet]
+        //[AllowAnonymous]
+        //public async Task<ActionResult<FinalResponseDTO<List<PassDto>>>> GetListAsync(TenantEnums? tenant)
+        //{
+        //    var input = new DTO
+        //    {  
+        //    };
+        //    return await WithLoggingFinalResponse(input, async () =>
+        //    {
+        //        return await PassAppService.GetListAsync(input);
+        //    });
+        //}
     }
 }

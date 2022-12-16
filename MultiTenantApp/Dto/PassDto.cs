@@ -8,6 +8,6 @@ namespace MultiTenantApp.Dto
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Kind { get; set; } = string.Empty;
-        public string Tenant { get; set; } = Tenants.Internet;
+        public string Tenant { get; set; } = string.Empty;
     }
 }
