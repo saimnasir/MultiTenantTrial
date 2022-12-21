@@ -21,6 +21,7 @@ namespace MultiTenantApp.AppServices
 
         public async Task<List<PassDto>> GetListAsync(DTO input)
         {
+            // TODO : tenant validator
             if (string.IsNullOrEmpty(TenantService.Tenant?.Trim())){
                 throw new Exception("Tenant Invalid");
             }
