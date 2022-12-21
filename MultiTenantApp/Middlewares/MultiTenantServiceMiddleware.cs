@@ -1,6 +1,5 @@
 ﻿using MultiTenantApp.Consts;
 using MultiTenantApp.Services;
-using Patika.Framework.Identity.Shared.Attributes;
 using Patika.Framework.Shared.Services;
 
 namespace MultiTenantApp.Middlewares
