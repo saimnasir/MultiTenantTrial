@@ -19,15 +19,18 @@ namespace MultiTenantApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<ActionResult<FinalResponseDTO<List<PassDto>>>> GetListAsync(string? tenant)
+        public async Task<ActionResult> GetListAsync(string timeZone, string language )
         {
             var input = new DTO
             {
             };
-            return await WithLoggingFinalResponse(input, async () =>
-            {
-                return await PassAppService.GetListAsync(input);
-            });
+            //return await WithLoggingFinalResponse(input, async () =>
+            //{
+            //GetClientInformation(true);
+            ClientInformationService.TimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(timeZone);
+            ClientInformationService.Language = language;
+            return Json(await PassAppService.GetListAsync(input));
+            //  });
         }
 
         //[HttpGet]

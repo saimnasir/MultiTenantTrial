@@ -33,6 +33,7 @@ using Patika.Framework.Identity.Shared.IdentityServerDbContext.RepositoryInterfa
 using Patika.Framework.Identity.Shared.IdentityServerDbContext.Repository;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,13 +74,14 @@ builder.Services.AddScoped<Patika.Framework.Identity.FacebookAuthProvider.Interf
 // Add App Services
 
 builder.Services.AddScoped<IPassAppService, PassAppService>();
+builder.Services.AddScoped<IClientInformationService, ClientInformationService>();
 builder.Services.AddScoped<IPassRepository, PassRepository>();
 
 builder.Services.AddSingleton<ITenantService, TenantService>();
 builder.Services.AddScoped<MultiTenantServiceMiddleware>();
-builder.Services.AddScoped<MappingProfile, GeneralMappingProfile>();
+//builder.Services.AddScoped<MappingProfile, GeneralMappingProfile>();
 builder.Services.AddScoped<IUnitOfWorkHostWithInterface, IpassDbContext>();
- 
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddSwaggerGenNewtonsoftSupport();
 
 builder.Services.AddSwaggerGen(c =>
